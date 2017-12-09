@@ -4,23 +4,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>The Art of Finding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--materialize css stylesheets here -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- regular style sheet -->
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
+
+
+
+
     <body>
 
         <div class="container">
         <!-- Create 3 rows -->
         <!-- 1st row -->
             <div class="row">
-            <div class="col s12">Nav Bar Here</div>
+           <nav>
+                        <div class="nav-wrapper">
+                            <div class="col s6">
+                            <a href="#!" class="brand-logo">Logo</a>
+                            </div>
+                            <div class="col s4">
+                                <form>
+                                    <div class="input-field">
+                                        <input id="search" type="search" required>
+                                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                        <i class="material-icons">close</i>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col s2">
+                              <ul class="right hide-on-med-and-down">
+                                    <li><a class="waves-effect waves-light btn">Button</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
 
-            </div>
+
+
+
+
 
 
              <!-- 2nd row -->
             <div class="row">
             <div class="col s6">6-columns (artist/art image)</div>
+
+
             <div class="col s6">6-columns (google map)</div>
             </div>
 

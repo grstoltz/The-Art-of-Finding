@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+    
+
     //Establish global variables for API call token
 
     var clientID = 'f3a6bc6bafa647a1b773'
@@ -15,26 +18,80 @@ $(document).ready(function(){
         xappToken = res.token; 
     });
 
-    var url = "https://api.artsy.net:443/api/artists/"
+    var url = "https://api.artsy.net/api/"
 
-    var artistName = "4d8b92b34eb68a1b2c0003f4"
-
-    var artistQuery = url + artistName
-
-    console.log(artistQuery)
+    var artistId;
+    
 
     //On click listener for arist search
     $("#submit").on("click", function(event){
         event.preventDefault();
+
+    var artistName = $("#artist-name").val().trim()
+
+    var artistNameQuery = url + "search?q=" + artistName
+
+$.ajax({
+    url: artistNameQuery,
+    method: 'GET',
+    beforeSend: function(xhr){xhr.setRequestHeader('X-Xapp-Token', xappToken);}
+    }).done(function(data){
+        console.log(data)
+        artistId = data._embedded.results[0]._links.self.href.split("/").pop();     
+        artistIdQueryFunc()
+        console.log(artistId)
+    })
+  
+})
+    
+function artistIdQueryFunc () {
+    var artistIdQuery = url + "artworks?artist_id=" + artistId
     $.ajax({
-        url: artistQuery,
+            url: artistIdQuery,
+            method: 'GET',
+            beforeSend: function(xhr){xhr.setRequestHeader('X-Xapp-Token', xappToken);}
+    }).done(function(results){
+            console.log(results)
+
+            for (var i=0; i < results._embedded.artworks.length; i++){
+           
+            var arrayId = results._embedded.artworks[i].id
+            
+            getArtworkUrl(arrayId)
+            }
+    })
+}
+
+function getArtworkUrl (id) {
+    var artworkQuery = url + "/artworks/" + id
+    $.ajax({
+        url: artworkQuery,
         method: 'GET',
         beforeSend: function(xhr){xhr.setRequestHeader('X-Xapp-Token', xappToken);}
     }).done(function(results){
         console.log(results)
+        var image = results._links.thumbnail.href
+        console.log("image is " + image);
+        renderImages(image)
+
     })
-    })
+}
+
+function renderImages(img){
+
+    var imgDiv = $("<img>")
+    .attr("src", img)
+
+    var aDiv = $("<a>")
+        .addClass("carousel-item")
+        .html(imgDiv);
     
+    $(".carousel").append(aDiv)
+
+    $('.carousel').carousel();
+}
+
+
     
     //queries API for artist ID
 

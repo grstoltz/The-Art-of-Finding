@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+    
+
     //Establish global variables for API call token
 
     var clientID = 'f3a6bc6bafa647a1b773'
@@ -75,9 +78,17 @@ function getArtworkUrl (id) {
 }
 
 function renderImages(img){
+
     var imgDiv = $("<img>")
-    imgDiv.attr("src", img)
-    $("#carousel").append(imgDiv)
+    .attr("src", img)
+
+    var aDiv = $("<a>")
+        .addClass("carousel-item")
+        .html(imgDiv);
+    
+    $(".carousel").append(aDiv)
+
+    $('.carousel').carousel();
 }
 
 

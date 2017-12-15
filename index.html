@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
 </head>
 <body>
   <nav class="white" role="navigation">
@@ -46,7 +47,7 @@
 
       </div>
     </div>
-     
+
   </div>
 
 
@@ -65,11 +66,19 @@
         </div>
 
 
-
+  <!-- Map Div -->
         <div class="col s12 m6">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Right Side Place Google Maps Here - use card?</h5>
+
+          <div class="card-body">
+            <input id="address" type="textbox" value="Gallery Location" style="width:100%">
+            <input id="location" type="button" value="Marker">
+            <input onclick="clearMarkers();" id="submit" type="button" value="Remove">
+          </div>
+          <!-- The Map Div -->
+          <div id="map" style="height:400px; width:400px; margin: 10px 40px 10px"></div>
+
 
             <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
           </div>
@@ -79,7 +88,7 @@
     </div>
   </div>
 
-  <!-- Map Div -->
+
   <div class="container">
     <div class="section">
 
@@ -88,9 +97,9 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Carousel Here</h4>
           <div class="carousel">
-            
+
           </div>
-            
+
         </div>
       </div>
 
@@ -139,7 +148,13 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="assets/javascript/materialize.min.js"></script>
   <!-- <script src="assets/javascript/init.js"></script> -->
+<!--   <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=displayMap( 48.8606111, 2.337644, 'Musée du Louvre')"> -->
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=initMap">
+  </script>
   <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/map.js"></script>
 
   </body>
 </html>

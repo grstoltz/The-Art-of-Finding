@@ -6,9 +6,25 @@
  * Made By MaterializeCSS.com
  */
 
+#index-banner {
+  padding: 25px;
+}
+
+ /* .fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+  z-index: 999999;
+  background: white;
+ } */
+
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+#carousel{
+  height: 300px
 }
 
 p {

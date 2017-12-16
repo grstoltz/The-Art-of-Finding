@@ -19,6 +19,10 @@ p {
   color: #26a69a;
 }
 
+#filler-div  {
+  min-height: 500px;
+}
+
 .parallax-container {
   min-height: 380px;
   line-height: 0;

@@ -73,15 +73,14 @@ $(document).ready(function(){
 
                 // collectingInstitution.push(results._embedded.artworks[i].collecting_institution)
 
-
-                getArtwork(arrayId)
+                getArtwork(arrayId, i)
                 }
 
 
             })
     }
 
-    function getArtwork (id) {
+    function getArtwork (id, counter) {
         var artworkQuery = url + "/artworks/" + id
         $.ajax({
             url: artworkQuery,
@@ -98,7 +97,7 @@ $(document).ready(function(){
             var title = results.title
 
             imageArray.push({
-                
+                id: counter,
                 imgId: id,
                 imgUrl: image,
                 title: title,
@@ -120,35 +119,40 @@ $(document).ready(function(){
 
     function renderCarousel(array){
 
-    $("#carousel").empty()
+    $(".carousel").empty()
 
     $(array).each(function(key, value,) {
 
         var imgDiv = $("<img>")
         .attr("src", value.imgUrl)
         .attr("id", "carousel-image")
-        .attr("data-institution", value.institution)
+        .attr("data", value.id)
     
 
         var aDiv = $("<a>")
             .addClass("carousel-item")
             .html(imgDiv);
         
-        $("#carousel").append(aDiv)
+        $(".carousel").append(aDiv)
         
-    }
-)}
+    })
+
+    activateCarousel()
+}
 
     function activateCarousel (){
-
+        if ($(".carousel").hasClass("initialized")) {
+            $(".carousel").removeClass("initialized")
+            
+        }
         $('.carousel').carousel();
-
     }
 
-    $("#carousel").on("click", "#carousel-image", function (){
+    $(".carousel").on("click", "#carousel-image", function (){
 
-        var location = $(this).data("institution")
+         
         var imgSrc = $(this).attr("src")
+        var id = $(this).attr("data")
 
         renderImage(imgSrc)
 
@@ -156,10 +160,12 @@ $(document).ready(function(){
 
     function renderImage(img){
 
+    $("#card-image").empty();
+
         var imgDiv = $("<img>")
             .attr("src", img)
 
-        $("#img-card").html(imgDiv)
+    $("#card-image").html(imgDiv)
 
     }
     

@@ -2,11 +2,9 @@
 
 //Google Maps API global variables
 var map;
-var markers = [];
 var addressLng;
 var addressLat;
 var addressFormatted;
-var addrMarker;
 var LocationString;
 
 
@@ -17,9 +15,20 @@ function initMap() {
         zoom: 13,
         center: { lat: 32.2350428, lng: -110.9547842 }
     });
-    console.log("In initmap");
+    console.log("In initMap");
     addMarker(32.2350428, -110.9547842, 'U of A');
-    $("#address").val("Tucson, AZ");
+    $("#galleryName").text("");
+    $("#galleryAddr").text("");
+};
+
+function resetMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: { lat: 37.50, lng: -95.35 }
+    });
+    console.log("In ResetMap");
+    $("#galleryName").text("");
+    $("#galleryAddr").text("");
 };
 
 
@@ -30,22 +39,7 @@ function addMarker(locLat, locLng, locTitle) {
         title: locTitle,
         map: map
     });
-    markers.push(marker);
 };
-
-//Clears markers on map
-function clearMarkers() {
-    setMapOnAll(null);
-    markers = [];
-}
-
-// Sets the map on all markers in the array.
-function setMapOnAll(map) {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
-    }
-}
-
 
 function displayMap(LocationString) {
     console.log("In displayMap");
@@ -56,17 +50,15 @@ function displayMap(LocationString) {
             console.log("Results - " + address);
             console.log("Data Lat- " + data.results[0].geometry.location.lat);
             console.log("Data Lng- " + data.results[0].geometry.location.lng);
-            console.log("Short Name- " + data.results[0].address_components.short_name);
             addressLng = data.results[0].geometry.location.lng;
             addressLat = data.results[0].geometry.location.lat;
-            addrMarker = data.results[0].address_components.short_name;
             addressFormatted = data.results[0].formatted_address;
             // Create the map with the lat/lng retrieved from the API.
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: { lat: Number(addressLat), lng: Number(addressLng) },
             });
-            addMarker(addressLat, addressLng, addrMarker);
+            addMarker(addressLat, addressLng, LocationString);
             $("#galleryName").text(LocationString);
             $("#galleryAddr").text(addressFormatted);
         });
@@ -256,7 +248,15 @@ $(document).ready(function () {
         }
 
         renderImage(imgSrc, artTitle, artMedium)
-        displayMap(artLocation)
+        if ( !( artLocation ) ){
+            console.log( "Running initMap");
+          resetMap();
+        }
+        else{
+          console.log( "Running displayMap");
+          displayMap(artLocation);
+        }
+
 
     })
 
@@ -271,7 +271,7 @@ $(document).ready(function () {
         $("#infoPic").html(smallerImg);
 
         $("#art-title").text(title)
-        $("#link").html('<a href=https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + "fine%20art%20" + encodeURI(title) + "%20" + encodeURI(artistName) + '>Find on Amazon</a>')
+        $("#link").html('<a href=https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=' + "fine%20art%20" + encodeURI(title) + "%20" + encodeURI(artistName) + ' target="_blank">Find on Amazon</a>')
 
     }
 

@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Art of Finding</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -21,49 +22,59 @@
     <div id="index-banner">
         <div class="section no-pad-bot">
             <div class="container">
-                <form class="input-field col s12">
-                    <label class="active">
-                        Artist
-                    </label>
-                    <input type="text" id="artist-name">
-                    <button type='submit' id="submit" class="btn waves-effect waves-light">
-                        Submit
-                    </button>
-                </form>
+                <div class="card" id="search-card">
+                    <div class="card-content">
+                        <form class="input-field col s12">
+                            <label class="active">
+                                Artist Search
+                            </label>
+                            <input type="text" id="artist-name">
+                            <button type='submit' id="submit" class="btn waves-effect waves-light">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Carousel -->
     <div class="container">
         <div class="section">
-            <div class="row" style="margin-bottom:50px">
-                <div id="carousel" class="col s12 center">
-                    <div class="carousel">
-                    </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="carousel">
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="section">
-            <!--   Icon Section   -->
+            <!--   Image Section   -->
             <div class="row">
                 <div class="col s12 m6">
-                    <div class="card">
+                    <div class="card" id="image-card">
                         <div class="card-image waves-effect waves-block waves-light" id="card-image">
+                            <img src="assets/images/logo.jpg" id="logo-img">
                         </div>
                         <div class="card-content">
                             <span id="art-title" class="card-title activator grey-text text-darken-4">Search an Artist to Begin<i class="material-icons right">more_vert</i></span>
                             <p id="link"></p>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Title<i class="material-icons right">close</i></span>
-                            <p>Here is some more information about this product that is <b>only</b> revealed once clicked on.</p>
+                            <span class="card-title grey-text text-darken-4">Hey! There's nothing here!<i class="material-icons right">close</i></span>
+                            
                         </div>
                     </div>
                 </div>
                 <!-- Map Div -->
                 <div class="col s12 m6">
-                    <div class="card">
+                    <div class="card" id="map-card">
                         <div class="card-image">
                             <div id="map" style="height:400px; width:auto; margin: 10px"></div>
                         </div>
@@ -114,12 +125,12 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2017 <a class="brown-text text-lighten-3" href="#!"> The Awesome Tucson, AZ Cooding Bootcamp Pod Team </a>
+                © 2017 <a class="brown-text text-lighten-3" href="#!"> The Awesome Tucson, AZ Coding Bootcamp Pod Team </a>
             </div>
         </div>
     </footer>
     <!-- Modal -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal" style="z-index: 5">
         <div class="modal-content">
             <h4>No Art Found!</h4>
             <p>This art database only can show public works, please try searching another artist. </p>
@@ -131,8 +142,7 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="assets/javascript/materialize.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=initMap">
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=initMap"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
 

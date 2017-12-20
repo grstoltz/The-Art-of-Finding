@@ -51,7 +51,7 @@ function displayMap(LocationString) {
             addressFormatted = data.results[0].formatted_address;
             // Create the map with the lat/lng retrieved from the API.
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 13,
+                zoom: 16,
                 center: { lat: Number(addressLat), lng: Number(addressLng) },
             });
             addMarker(addressLat, addressLng, LocationString);
@@ -62,7 +62,7 @@ function displayMap(LocationString) {
 
 //For the sticky nav
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= 80) {
+    if ($(window).scrollTop() >= 63) {
         $("#index-banner").addClass('fixed-header');
     }
     else {
@@ -74,7 +74,6 @@ $(document).ready(function () {
 
     //Allows modals to be triggered
     initializeModal();
-
 
     ////////ARTSY API//////////
 
@@ -108,6 +107,8 @@ $(document).ready(function () {
     $("#submit").on("click", function (event) {
 
         emptyCard();
+
+        emptyCarousel();
 
         event.preventDefault();
 
@@ -215,7 +216,7 @@ $(document).ready(function () {
     //Takes in the array of images and renders the images to the carousel
     function renderCarousel(array) {
 
-        $(".carousel").empty()
+        emptyCarousel();
 
         $(array).each(function (key, value, ) {
 
@@ -223,6 +224,8 @@ $(document).ready(function () {
                 .attr("src", value.imgUrl)
                 .attr("id", "carousel-image")
                 .attr("data", value.arrayId)
+                .css("width", "100%")
+                .css("height", "100%")
 
 
             var aDiv = $("<a>")
@@ -241,7 +244,7 @@ $(document).ready(function () {
             $(".carousel").removeClass("initialized")
 
         }
-        $('.carousel').carousel();
+        $('.carousel').carousel({padding: 50}, {shift: 50}, {dist: 0});
     }
 
     $(".carousel").on("click", "#carousel-image", function () {
@@ -282,7 +285,8 @@ $(document).ready(function () {
 
         emptyCard();
 
-        var imgDiv = $("<img>").attr("src", img)
+        var imgDiv = $("<img>")
+                    .attr("src", img)
 
         $("#card-image").html(imgDiv)
 
@@ -321,30 +325,13 @@ $(document).ready(function () {
 
     function noArtFound() {
         $('#modal1').modal('open')
+        $('#modal1').css("z-index", 99999)
     }
 
-
-    //queries API for artist ID
-
-    //Create API pull based off artist name
-
-    //Create array of images with properties of location
-
-    //Render images to slider div
-
-    //On click listener for image
-
-
-    //Use Google Maps API to show location
-
-    //Query API to convert location to coordinates
-
-    //render Google maps with current location
-
-    //Render image to lefthand div
+    function emptyCarousel() {
+        $(".carousel").empty()
+    }
 
     initializeQuery();
-
-
 
 })

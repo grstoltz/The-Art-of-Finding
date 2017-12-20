@@ -10,13 +10,40 @@
   padding: 25px;
 }
 
- /* .fixed-header {
+.fixed-header {
   position: fixed;
   top:0; left:0;
-  width: 100%; 
+  width: 100%;
   z-index: 999999;
   background: white;
- } */
+  padding: 10px;
+  border: 5px;
+  border-bottom-color: teal;
+  border-bottom: 5px solid teal;
+
+ }
+
+
+body{
+  background-color:#fffae6;
+}
+
+
+nav {
+    height: 60px;
+}
+
+.card {
+  height: 500px;
+}
+
+#card-image{
+  height: 75%
+}
+
+.ticons{
+margin-left: 10px;
+}
 
 nav ul a,
 nav .brand-logo {
@@ -24,7 +51,7 @@ nav .brand-logo {
 }
 
 #carousel{
-  height: 300px
+  height: 400px
 }
 
 p {
@@ -35,19 +62,12 @@ p {
   color: #26a69a;
 }
 
-#filler-div  {
-  min-height: 500px;
+
+td {
+  padding: 0px;
 }
 
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
+
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -75,3 +95,9 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+
+
+
+
+

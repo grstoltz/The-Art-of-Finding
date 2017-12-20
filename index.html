@@ -11,71 +11,38 @@
     <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
-
 <body>
     <!-- Nav Bar -->
-    <nav class="white" role="navigation">
+    <nav class="teal" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">Art of Finding</a>
-
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a id="logo-container" href="#" class="brand-logo white-text">Art of Finding</a>
         </div>
     </nav>
-    <!-- <div id="index-banner">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <br>
-                <br> -->
-                <!-- The-Art-of-Finding -->
-                <!-- <h5 class="header center teal-text text-lighten-2">Form Here</h5>
-                <div class="row center">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="artist-name" type="text" class="validate black-text">
-                            <label class="active" for="first_name2">Artist Name</label>
-                        </div>
-                    </div>
-                    <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <div id="index-banner">
         <div class="section no-pad-bot">
             <div class="container">
-              <form class="input-field col s12">
-                <label class="active">
-                  Artist
-                </label>
-                <input type="text" id="artist-name">
-                <button type='submit' id="submit" class="btn waves-effect waves-light">
-                 Submit
-                </button>
-              </form>
+                <form class="input-field col s12">
+                    <label class="active">
+                        Artist
+                    </label>
+                    <input type="text" id="artist-name">
+                    <button type='submit' id="submit" class="btn waves-effect waves-light">
+                        Submit
+                    </button>
+                </form>
             </div>
         </div>
     </div>
-
     <div class="container">
-      <div class="section">
-          <div class="row">
-              <div id="carousel" class="col s12 center">
-
-                  <div class="carousel">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-
-
-
-
-
+        <div class="section">
+            <div class="row" style="margin-bottom:50px">
+                <div id="carousel" class="col s12 center">
+                    <div class="carousel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="section">
             <!--   Icon Section   -->
@@ -83,7 +50,6 @@
                 <div class="col s12 m6">
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light" id="card-image">
-                            <div id="filler-div"></div>
                         </div>
                         <div class="card-content">
                             <span id="art-title" class="card-title activator grey-text text-darken-4">Search an Artist to Begin<i class="material-icons right">more_vert</i></span>
@@ -99,77 +65,75 @@
                 <div class="col s12 m6">
                     <div class="card">
                         <div class="card-image">
-                            <!-- <input id="address" type="textbox" value="Gallery Location" style="width:100%">
-                            <input id="location" type="button" value="Marker">
-                            <input onclick="clearMarkers();" id="submit" type="button" value="Remove"> -->
-                            <!-- The Map Div -->
                             <div id="map" style="height:400px; width:auto; margin: 10px"></div>
                         </div>
                         <div class="card-content">
-                          <p id="galleryName"></p>
-                          <p id="galleryAddr"></p>
+                            <p id="galleryName"></p>
+                            <p id="galleryAddr"></p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-      </div>
-
-        <!-- Footer -->
-        <footer class="page-footer teal">
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l5 s12">
+                    <h5 class="white-text">Team Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a team of bootcamp students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Resources Used</h5>
+                    <ul>
+                        <li><a class="white-text" href="http://materializecss.com/">Materialize Css</a>
+                            <img class="ticons" img src="assets/images/materializeCss.png" alt="materializecss" width="25" height="25"></li>
+                        <li><a class="white-text" href="https://developers.artsy.net/">Artsy API</a>
+                            <img class="ticons" img src="assets/images/artsyAPI.svg" alt="artsy_API" width="25" height="25"></li>
+                        <li><a class="white-text" href="https://enterprise.google.com/maps/products/mapsapi.html?utm_source=google&utm_medium=cpc&utm_campaign=2016-geo-na-endor-gmedia-search-us-br_bmm_en_refr_hv_1:1&utm_content=usca%7Cen%7Chybr%7C1001877%7C%7C%7Cbrand%7C%7Crefr_hv_1:1&utm_term=%2Bmapping%20%2Bgoogle&creative=227599269746&gclid=CjwKCAiApdPRBRAdEiwA84bo3ycRSf0maq_t-oJvrXz-xTqKR3O6Pz5AMc8VbDFH-m5OnU0iNki52BoCtVQQAvD_BwE&dclid=CMnp072Sj9gCFQ_BZAodIqoGFg">Google Map API</a>
+                            <img class="ticons" img src="assets/images/googleAPI.png" alt="google_maps_API" width="25" height="25"></li>
+                    </ul>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Connect With Us <img class="oct"img src="assets/images/github.png" alt="Github" width="30" height="30"></a></h5>
+                    <table class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td><a class="white-text" href="https://github.com/tmederos">Trish Mederos</a></td>
+                                <td><a class="white-text" href="https://github.com/grstoltz">Grant Stolz</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="white-text" href="https://github.com/Dameon1">Dameon Mendoza</a></td>
+                                <td><a class="white-text" href="https://github.com/akt12345">Abby Thoresen</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
             <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Team Bio</h5>
-                        <p class="grey-text text-lighten-4">We are a team of bootcamp students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Resources Used</h5>
-                        <ul>
-                            <li><a class="white-text" href="http://materializecss.com/">Materialize Css</a><img src="assets/images/materializeCss.png" alt="materializecss" width="25" height="25"></li>
-
-                            <li><a class="white-text" href="https://developers.artsy.net/">Artsy API</a><img src="assets/images/artsyAPI.svg" alt="artsy_API" width="25" height="25"></li>
-
-
-
-                            <li><a class="white-text" href="https://enterprise.google.com/maps/products/mapsapi.html?utm_source=google&utm_medium=cpc&utm_campaign=2016-geo-na-endor-gmedia-search-us-br_bmm_en_refr_hv_1:1&utm_content=usca%7Cen%7Chybr%7C1001877%7C%7C%7Cbrand%7C%7Crefr_hv_1:1&utm_term=%2Bmapping%20%2Bgoogle&creative=227599269746&gclid=CjwKCAiApdPRBRAdEiwA84bo3ycRSf0maq_t-oJvrXz-xTqKR3O6Pz5AMc8VbDFH-m5OnU0iNki52BoCtVQQAvD_BwE&dclid=CMnp072Sj9gCFQ_BZAodIqoGFg">Google Map API</a><img src="assets/images/googleAPI.png" alt="google_maps_API" width="25" height="25"></li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Connect With Us</h5><img src="assets/images/github.png" alt="Github" width="30" height="30"class="circle responsive-img"></a>
-                        <ul>
-                            <li><a class="white-text" href="https://github.com/grstoltz">Grant Stolz</a></li>
-
-                            <li><a class="white-text" href="https://github.com/Dameon1">Dameon Mendoza</a></li>
-
-                            <li><a class="white-text" href="https://github.com/tmederos">Trish Mederos</a></li>
-
-                            <li><a class="white-text" verticle-align:"bottom" href="https://github.com/akt12345">Abby Thoresen</a></li>
-                        </ul>
-                    </div>
-                </div>
+                © 2017 <a class="brown-text text-lighten-3" href="#!"> The Awesome Tucson, AZ Cooding Bootcamp Pod Team </a>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 <a class="brown-text text-lighten-3" href="#!"> The Awesome Tucson, AZ Cooding Bootcamp Pod Team </a>
-                </div>
-            </div>
-        </footer>
-
-
-
-
-        <!--  Scripts-->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script src="assets/javascript/materialize.min.js"></script>
-        <!-- <script src="assets/javascript/init.js"></script> -->
-        <!--   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=displayMap( 48.8606111, 2.337644, 'Musée du Louvre')"> -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=initMap">
-        </script>
-        <script src="assets/javascript/app.js"></script>
-        <!-- <script src="assets/javascript/map.js"></script> -->
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>No Art Found!</h4>
+            <p>This art database only can show public works, please try searching another artist. </p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/materialize.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0_KYSn9oSxPb3TANsaYSy0E_ge44HSg&callback=initMap">
+    </script>
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
